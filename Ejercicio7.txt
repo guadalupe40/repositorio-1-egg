@@ -1,0 +1,26 @@
+public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        int right = 0;
+        int wrong = 0;
+        String frase;
+       
+       do{
+           
+        System.out.println("ingrese una frase");
+        frase = leer.nextLine();
+       
+        
+        if(frase.length() <= 5){
+            if(frase.substring(0,1).equalsIgnoreCase("x") && frase.substring(4,5).equalsIgnoreCase("o")){
+                right++;
+            }else if(!"&&&&&".equals(frase)){
+                wrong++;
+            }
+        }else{
+            wrong++;
+        }
+       } while(!"&&&&&".equals(frase));
+        System.out.println("la cantidad de lecturas correctas es de " + right);
+        System.out.println("la cantidad de lecturas incorrectas es de " + wrong);
+        
+    }
